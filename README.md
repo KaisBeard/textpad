@@ -1,1 +1,1 @@
-A textarea, that can be typed in with a controller. 
+A textarea, that can be typed in with a controller or gamepad.
