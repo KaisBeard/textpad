@@ -7,6 +7,16 @@
   pointer-events: none;
 }
 
+h1 {
+  margin: 1em 2em;
+}
+
+.myTextArea {
+  min-width: 300px;
+  min-height: 400px;
+  margin: 2em;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -27,6 +37,8 @@
 .App-link {
   color: #61dafb;
 }
+
+
 
 @keyframes App-logo-spin {
   from {
