@@ -4,6 +4,9 @@ import {useEffect, useState, useRef } from "react";
 import Textarea from 'react-expanding-textarea'
 import React from 'react'
 import { useGamepads } from 'react-gamepads'
+import Manuals from "./Manuals.js"
+import TypeSupport from "./TypeSupport"
+import Collapsible from 'react-collapsible';
 
 function App() {
   const [gamepads, setGamepads] = useState({});
@@ -189,8 +192,8 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>type here:</h1>       
+    <div className='frameAll'>
+      <h1>Type here using your gamepad:</h1>       
       <Textarea
         value={text}
         id="my-textarea"
@@ -199,6 +202,12 @@ function App() {
         onChange={handleChange}
         ref={textareaRef}
       />
+      <Collapsible trigger={<h2>Typesupport</h2>} >
+        <TypeSupport />
+      </Collapsible>
+      <Collapsible trigger={<h2>Manuals</h2>} >
+        <Manuals />
+      </Collapsible>
     </div>
   );
 }
