@@ -9,12 +9,16 @@
 
 .keyboardFeedback {
   position: absolute;
-
   width: 56px;
   height: 54px;
   opacity: 0.5;
   background: red;
   border-radius: 8px;
+}
+
+/*For not highlighting any Key*/
+.keyNull {
+  visibility: hidden;
 }
 
 .keyq {
@@ -24,7 +28,7 @@
 
 .keyw {
   top: 143px;
-  left: 176px;
+  left: 175px;
 }
 
 .keye {
@@ -34,10 +38,142 @@
 
 .keyr {
   top: 143px;
-  left: 304px;
+  left: 303px;
 }
 
 .keyt {
   top: 143px;
-  left: 368px;
+  left: 367px;
+}
+
+.keyz {
+  top: 143px;
+  left: 431px;
+}
+
+.keyu {
+  top: 143px;
+  left: 494px;
+}
+
+.keyi {
+  top: 143px;
+  left: 558px;
+}
+
+.keyo {
+  top: 143px;
+  left: 622px;
+}
+
+.keyp {
+  top: 143px;
+  left: 686px;
+}
+
+.keyü {
+  top: 143px;
+  left: 749px;
+}
+
+/*second row*/
+.keya {
+  top: 205px;
+  left: 128px;
+}
+
+.keys {
+  top: 205px;
+  left: 192px;
+}
+
+.keyd {
+  top: 205px;
+  left: 256px;
+}
+
+.keyf {
+  top: 205px;
+  left: 319px;
+}
+
+.keyg {
+  top: 205px;
+  left: 383px;
+}
+
+.keyh {
+  top: 205px;
+  left: 447px;
+}
+
+.keyj {
+  top: 205px;
+  left: 511px;
+}
+
+.keyk {
+  top: 205px;
+  left: 574px;
+}
+
+.keyl {
+  top: 205px;
+  left: 638px;
+}
+
+.keyö {
+  top: 205px;
+  left: 702px;
+}
+
+.keyä {
+  top: 205px;
+  left: 766px;
+}
+
+/*Third row*/
+.keyy {
+  top: 266px;
+  left: 160px;
+}
+
+.keyx {
+  top: 266px;
+  left: 224px;
+}
+
+.keyc {
+  top: 266px;
+  left: 287px;
+}
+
+.keyv {
+  top: 266px;
+  left: 351px;
+}
+
+.keyb {
+  top: 266px;
+  left: 414px;
+}
+
+.keyn {
+  top: 266px;
+  left: 478px;
+}
+
+.keym {
+  top: 266px;
+  left: 542px;
+}
+
+.keyKomma {
+  top: 266px;
+  left: 606px;
+}
+
+.keyFullstop {
+  top: 266px;
+  left: 670px;
 }
