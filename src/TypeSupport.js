@@ -9,12 +9,15 @@ import TextPadNumbers from "./pictures/textpad numpad.png"
 import Textpad from "./pictures/textpad.png" 
 
 function TypeSupport() {
-  
+  const [active, setActive] = useState("isActive")
   return (
     <div className='frameManuals'>
       <div className='contentDiv'>
         <h3>Keyboard letters</h3>
-        <img src={Textpad} />               
+        <div className="keyboardFeedbackFrame">
+          <img src={Textpad} />
+
+        </div>               
       </div> 
       <div className='contentDivLR'>
         <div>

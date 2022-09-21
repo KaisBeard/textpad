@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import "./keyboardFeedback.css";
 import {useEffect, useState, useRef } from "react";
 import Textarea from 'react-expanding-textarea'
 import React from 'react'
@@ -45,7 +46,7 @@ function App() {
       setText(text.slice(0, position-1)+text.slice(position))
       setCursor(cursor-1)})
     } 
-
+    
     //Determine if to give out normal letters, caps, number or symbol dependant on the state and return the right figure
     const determineLetter = (noCapsLetter, capsLetter, number, symbol) => {
       switch(keyboardFocus) {
@@ -96,6 +97,8 @@ function App() {
         })
       }
     }
+
+    //new system: change letter on the go and hand letter to keyboardfeedback, trigger the typeing by releasing the trigger
 
     typeButAxe(4, 0, "d", "D", "a", "A", 5, 0);
     typeButAxe(5, 0, "g", "G", "d", "D", 0, 5);
@@ -170,7 +173,7 @@ function App() {
     //General function
     const moveCursor = (action, but) => {
       if (gamepads[0].buttons[but].pressed === true) {
-        delay(250).then(() => setCursor(cursor+ action))
+        delay(250).then(() => setCursor(cursor + action))
       } 
     }
     

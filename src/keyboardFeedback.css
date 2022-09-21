@@ -1,0 +1,43 @@
+.keyboardFeedbackFrame {
+  position: relative;
+}
+
+
+.positive {
+
+}
+
+.keyboardFeedback {
+  position: absolute;
+
+  width: 56px;
+  height: 54px;
+  opacity: 0.5;
+  background: red;
+  border-radius: 8px;
+}
+
+.keyq {
+  top: 143px;
+  left: 112px;
+}
+
+.keyw {
+  top: 143px;
+  left: 176px;
+}
+
+.keye {
+  top: 143px;
+  left: 240px;
+}
+
+.keyr {
+  top: 143px;
+  left: 304px;
+}
+
+.keyt {
+  top: 143px;
+  left: 368px;
+}
