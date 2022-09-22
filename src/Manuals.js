@@ -33,6 +33,8 @@ function Manuals() {
         <img src={TextPadNumbers} />
         <h3>Exceptions</h3>
         <ul>
+          <li>Space: pushing down the left stick will create a space.</li>
+          <li>Backspace: pushing down the right stick will delete the last digit.</li>
           <li>Number 0: You can type the 0 on the number-keyboard using either stick to left + left trigger or stick to right + right trigger</li>
           <li>Letter ü: It can be typed with right stick to the left + left trigger. And yes, it is a german keyboard layout.</li>
         </ul>
