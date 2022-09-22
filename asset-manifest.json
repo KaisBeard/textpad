@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/textpad/static/css/main.dc07c85d.css",
+    "main.js": "/textpad/static/js/main.cccc4ef7.js",
+    "static/js/787.b5f9dfcf.chunk.js": "/textpad/static/js/787.b5f9dfcf.chunk.js",
+    "static/media/textpad 2.png": "/textpad/static/media/textpad 2.729c9e28cf3efafae67e.png",
+    "static/media/textpad.png": "/textpad/static/media/textpad.e8b7234e2b5898258e65.png",
+    "static/media/textpad controls.png": "/textpad/static/media/textpad controls.fa1cc7d1e2e3cf2255ee.png",
+    "static/media/textpad numpad lines.png": "/textpad/static/media/textpad numpad lines.031606d3c15c5da3067f.png",
+    "static/media/textpad numpad.png": "/textpad/static/media/textpad numpad.eff7a661afc7601b1c1d.png",
+    "static/media/logo.svg": "/textpad/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/textpad/index.html",
+    "main.dc07c85d.css.map": "/textpad/static/css/main.dc07c85d.css.map",
+    "main.cccc4ef7.js.map": "/textpad/static/js/main.cccc4ef7.js.map",
+    "787.b5f9dfcf.chunk.js.map": "/textpad/static/js/787.b5f9dfcf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dc07c85d.css",
+    "static/js/main.cccc4ef7.js"
+  ]
+}
