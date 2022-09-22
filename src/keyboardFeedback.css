@@ -11,6 +11,25 @@
   border-radius: 8px;
 }
 
+.keyframe {
+  position: absolute;
+  width: 54px;
+  height: 52px;
+  opacity: 0.4;
+  border: 3px solid black;
+  border-radius: 8px;
+}
+
+.frameD {
+  top: 203px;
+  left: 253px;
+}
+
+.frameK {
+  top: 203px;
+  left: 572px;
+}
+
 /*For not highlighting any Key*/
 .keyNull {
   visibility: hidden;

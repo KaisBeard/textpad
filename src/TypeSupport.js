@@ -52,6 +52,10 @@ function TypeSupport(chosenLetter) {
           <div>
             <div className={`keyboardFeedback ${letterCssClass}`}>
             </div>
+            <div className={`keyframe frameD`}>
+            </div>
+            <div className={`keyframe frameK`}>
+            </div>
           </div>
         </div>               
       </div> 
