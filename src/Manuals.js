@@ -17,15 +17,12 @@ function Manuals() {
       <div className='contentDiv'>       
         <h3>Type letters</h3>
         <p>
-          The system works in a way that you move around the keyboard using the sticks and der shoulder/trigger-buttons. The left stick is used for the left half of the keyboard, the right stick is used for the right half. They start at the buttons d and k. Using only the sticks, you can type the 4 letters surrounding it. E.g.: The left stick: up: e, left: s, right: f, down c. Now using the shoulder buttons you can one more to the left/right on the keyboard (left shoulder: left, right shoulder: right e.g.: left shoulder + left stick up = w). Using the trigger buttons, you get the rest of the (letter-)keyboard. They do the same thing the shoulders do, but they move two keys left/right (e.g. left trigger + left stick up = q).  
+          The system works in a way that you move around the keyboard using the sticks and der shoulder/trigger-buttons. <br /> The left stick is used for the left half of the keyboard, the right stick is used for the right half. They start at the buttons d and k. Using only the sticks, you can type the 4 letters surrounding it. <br /> E.g.: The left stick: up: e, left: s, right: f, down c. <br /> Now using the shoulder buttons you can move one more to the left/right on the keyboard (left shoulder: left, right shoulder: right e.g.: left shoulder + left stick up = w). <br /> Using the trigger buttons, you get the rest of the (letter-)keyboard. They do the same thing the shoulders do, but they move two keys left/right (e.g. left trigger + left stick up = q).  
         </p> 
         <p>
-          Getting the button where the stick starts is a little tricky (d or k). To reach them you have to move one key left with a shoulder button and push the stick in the opposing direction (e.g. right shoulder + left stick to the left = d)
+          Getting the button where the stick starts at is a little tricky (d and k). To reach them you have to move one key left with a shoulder button and push the stick in the opposing direction (e.g. right shoulder + left stick to the left = d)
         </p>
         <img src={Textpad} />
-        <p>
-          You'll have to push the shoulder/trigger first, as the stick will trigger the typing. If you push the stick first, you'll end up with the stick-only key (you got 250 ms ... ;-)
-        </p>
       </div>
       <div className='contentDiv'>
         <h3>Change keyboard: Caps, numbers, symbols</h3>
@@ -36,8 +33,8 @@ function Manuals() {
         <img src={TextPadNumbers} />
         <h3>Exceptions</h3>
         <ul>
-          <li>Exceptions: You can type the 0 on the number-keyboard using (either) stick left + left trigger or stick right + right trigger</li>
-          <li>One exception is the letter "ü". It can be typed with right stick to the left + left trigger. And yes, it is a german keyboard layout.</li>
+          <li>Number 0: You can type the 0 on the number-keyboard using either stick to left + left trigger or stick to right + right trigger</li>
+          <li>Letter ü: It can be typed with right stick to the left + left trigger. And yes, it is a german keyboard layout.</li>
         </ul>
       </div>
     </div>

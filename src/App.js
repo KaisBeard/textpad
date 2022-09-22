@@ -48,44 +48,21 @@ function App() {
       setText(text.slice(0, position-1)+text.slice(position))
       setCursor(cursor-1)})
     } 
-    
-    //Determine if to give out normal letters, caps, number or symbol dependant on the state and return the right figure
-    /*const determineLetter = (noCapsLetter, capsLetter, number, symbol) => {
-      switch(keyboardFocus) {
-        case "noCaps":
-          return noCapsLetter !== undefined? noCapsLetter: ""
-          break;
-        case "caps":
-          return capsLetter !== undefined? capsLetter: ""
-          break;
-        case "caps1":
-          setKeyboardFocus("noCaps")
-          return capsLetter !== undefined? capsLetter: ""
-          break;
-        case "nums":
-          return number !== undefined? number: ""
-          break;
-        case "nums1":
-          setKeyboardFocus("noCaps")
-          return number !== undefined? number: ""
-          break;
-        case "symbs":
-          return symbol !== undefined? symbol: ""
-          break;
-        case "symbs1":
-          setKeyboardFocus("noCaps")
-          return symbol !== undefined? symbol: ""
-          break;
-        default:
-      }
-    }*/
 
     //fix bug with two many rerenders when more than one axis is activated
     const checKTwoAxisActivated = () => {
-      if ((gamepads[0].axes[0] < - 0.6 && (gamepads[0].axes[1] < - 0.6 || gamepads[0].axes[1] > 0.6)) ||
-          (gamepads[0].axes[0] > 0.6 && (gamepads[0].axes[1] < - 0.6 || gamepads[0].axes[1] > 0.6)) ||
-          (gamepads[0].axes[2] < - 0.6 && (gamepads[0].axes[3] < - 0.6 || gamepads[0].axes[3] > 0.6)) ||
-          (gamepads[0].axes[2] > 0.6 && (gamepads[0].axes[3] < - 0.6 || gamepads[0].axes[3] > 0.6))
+      if ((gamepads[0].axes[0] < - 0.6 && 
+            (gamepads[0].axes[1] < - 0.6 || gamepads[0].axes[1] > 0.6 || gamepads[0].axes[2] < - 0.6 || gamepads[0].axes[2] > 0.6 || gamepads[0].axes[3] < - 0.6 || gamepads[0].axes[3] > 0.6)) ||
+          (gamepads[0].axes[0] > 0.6 && 
+            (gamepads[0].axes[1] < - 0.6 || gamepads[0].axes[1] > 0.6 || gamepads[0].axes[2] < - 0.6 || gamepads[0].axes[2] > 0.6 || gamepads[0].axes[3] < - 0.6 || gamepads[0].axes[3] > 0.6)) ||
+          (gamepads[0].axes[2] < - 0.6 && 
+            (gamepads[0].axes[1] < - 0.6 || gamepads[0].axes[1] > 0.6 || gamepads[0].axes[3] < - 0.6 || gamepads[0].axes[3] > 0.6)) ||
+          (gamepads[0].axes[2] > 0.6 && 
+            (gamepads[0].axes[1] < - 0.6 || gamepads[0].axes[1] > 0.6 || gamepads[0].axes[3] < - 0.6 || gamepads[0].axes[3] > 0.6)) ||
+            (gamepads[0].axes[3] < - 0.6 && 
+              (gamepads[0].axes[1] < - 0.6 || gamepads[0].axes[1] > 0.6 )) ||
+            (gamepads[0].axes[3] > 0.6 && 
+              (gamepads[0].axes[1] < - 0.6 || gamepads[0].axes[1] > 0.6 ))
         ) {return true}
     }
 
@@ -143,20 +120,24 @@ function App() {
       }
     }
 
-    const commitLetter = async (axe, axe2) => {
+    const commitLetter = async (axe, axe2, axe3, axe4) => {
       const position = textareaRef.current.selectionEnd
       if (gamepads[0].axes[axe] < 0.25 && 
         gamepads[0].axes[axe] > -0.25 && 
         gamepads[0].axes[axe2] < 0.25 && 
-        gamepads[0].axes[axe2] > -0.25 && 
+        gamepads[0].axes[axe2] > -0.25 &&
+        gamepads[0].axes[axe3] < 0.25 && 
+        gamepads[0].axes[axe3] > -0.25 && 
+        gamepads[0].axes[axe4] < 0.25 && 
+        gamepads[0].axes[axe4] > -0.25 &&  
         chosenLetter !== "" &&
         chosenLetter !== undefined) {
-      setText(addStr(text, position, chosenLetter))
-      setCursor(cursor+1) 
-      setChosenLetter("")
-      if (keyboardFocus === "caps1" || keyboardFocus === "nums1" || keyboardFocus === "symbs1") {
-        setKeyboardFocus("noCaps")
-      }
+          setText(addStr(text, position, chosenLetter))
+          setCursor(cursor+1) 
+          setChosenLetter("")
+          if (keyboardFocus === "caps1" || keyboardFocus === "nums1" || keyboardFocus === "symbs1") {
+            setKeyboardFocus("noCaps")
+          }
       }
     }
 
@@ -212,82 +193,7 @@ function App() {
     }
     
     //execute commit at letting go of the stick
-    commitLetter(0,1)
-
-    /*
-    //type with button and axis
-    //General function
-    const typeButAxe = (button, axe, letterPlus, letterPlusCaps, letterMinus, letterMinusCaps, letterNumPlus, LetterNumMinus, letterSymbolPlus, LetterSymbolMinus) => {
-      if (gamepads[0].buttons[button].pressed === true && gamepads[0].axes[axe] > 0.5) {
-        const position = textareaRef.current.selectionEnd
-        delay(250).then(() => {
-          setText(addStr(text, position, determineLetter(letterPlus, letterPlusCaps, letterNumPlus, letterSymbolPlus)))
-          setCursor(cursor+1) 
-
-        })
-      } else if (gamepads[0].buttons[button].pressed === true && gamepads[0].axes[axe] < -0.5) {
-        const position = textareaRef.current.selectionEnd
-        delay(250).then(() => {
-          setText(addStr(text, position, determineLetter(letterMinus, letterMinusCaps, LetterNumMinus, LetterSymbolMinus)))
-          setCursor(cursor+1)
-
-        })
-      }
-    }*/
-
-    //new system: change letter on the go and hand letter to keyboardfeedback, trigger the typeing by releasing the trigger
-    /*
-    typeButAxe(4, 0, "d", "D", "a", "A", 5, 0);
-    typeButAxe(5, 0, "g", "G", "d", "D", 0, 5);
-    typeButAxe(6, 0, "?", "?", "!", "!");
-    typeButAxe(7, 0, "g", "G");
-    
-    typeButAxe(4, 1, "x", "X", "w", "W", 1, 7);
-    typeButAxe(5, 1, "v", "V", "r", "R", 3, 9);
-    typeButAxe(6, 1, "y", "Y", "v", "V");
-    typeButAxe(7, 1, "b", "B", "t", "T");
-
-    typeButAxe(4, 2, "k", "K", "h", "H", 5, 0);
-    typeButAxe(5, 2, "ö", "Ö", "k", "K", 0, 5);
-    typeButAxe(6, 2, ":", ":", "-", "-");
-    typeButAxe(7, 2, "ä", "Ä", "ü", "Ü");
-    
-    typeButAxe(4, 3, "n", "N", "u", "U", 1, 7);
-    typeButAxe(5, 3, ",", ",", "o", "O", 3, 9);
-    typeButAxe(6, 3, "b", "B", "z", "Z");
-    typeButAxe(7, 3, ".", ".", "p", "P");
-
-
-    //Type with Axis without buttons
-    //General function
-    const typeOnlyAxe = (axe, letterPlus, letterPlusCaps, letterMinus, letterMinusCaps, letterNumPlus, LetterNumMinus, letterSymbolPlus, LetterSymbolMinus) => {
-      const position = textareaRef.current.selectionEnd
-      if (gamepads[0].axes[axe] > 0.5) {
-        delay(250).then(() => {
-          setText(addStr(text, position, determineLetter(letterPlus, letterPlusCaps, letterNumPlus, letterSymbolPlus)))
-          setCursor(cursor+1)})
-      } else if (gamepads[0].axes[axe] < -0.5) {
-          delay(250).then(() => {
-          setText(addStr(text, position, determineLetter(letterMinus, letterMinusCaps, LetterNumMinus, LetterSymbolMinus)))
-          setCursor(cursor+1)})
-      }
-    }
-
-    //axes without buttons input
-    if (gamepads[0].buttons[4].pressed === false 
-      && gamepads[0].buttons[5].pressed === false
-      && gamepads[0].buttons[6].pressed === false
-      && gamepads[0].buttons[7].pressed === false)
-      {
-        typeOnlyAxe(0, "f", "F", "s", "S", 6, 4)
-        typeOnlyAxe(1, "c", "C", "e", "E", 2, 8)
-        typeOnlyAxe(2, "l", "L", "j", "J", 6, 4)
-        typeOnlyAxe(3, "m", "M", "i", "I", 2, 8) 
-      }
-    */
-  
-
-
+    commitLetter(0, 1, 2, 3)
 
     //Move through the text
     //General function
